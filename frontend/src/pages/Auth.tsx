@@ -1,7 +1,6 @@
 import { useState } from "react";
 
 import axiosInstance from "~/utils/axiosInstance";
-import axiosInstance from "../utils/axiosInstance";
 import { toast } from "react-toastify";
 
 export default function AuthForm() {
@@ -16,7 +15,7 @@ export default function AuthForm() {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.MouseEvent<HTMLButtonElement>) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (isLogin) {
       const { email, password } = data;
