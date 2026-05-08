@@ -1,12 +1,17 @@
 import { Route, Routes } from "react-router";
-import Auth from "~/pages/Auth.tsx"
 import { ToastContainer } from "react-toastify";
+import AuthForm from "./pages/Auth";
+import Signup from "./components/auth/Signup";
+import Login from "./components/auth/Login";
 
 export default function App() {
   return (
     <>
       <Routes>
-        <Route path="/auth/*" element={<Auth />} />
+        <Route path="/" element={<AuthForm />}>
+          <Route path="signup" element={<Signup />} />
+          <Route path="login" element={<Login />} />
+        </Route>
       </Routes>
       <ToastContainer />
     </>
